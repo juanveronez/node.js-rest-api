@@ -4,6 +4,8 @@ import { transactionsRoutes } from './routes/transactions'
 
 export const app = fastify()
 
-app.register(transactionsRoutes)
+app.register(transactionsRoutes, {
+  prefix: 'transactions',
+})
 
 app.listen({ port: env.PORT }).then(() => console.log('HTTP Server Running'))
