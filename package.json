@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "knex": "node --import tsx ./node_modules/.bin/knex",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src --ext .ts",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,8 @@
     "@types/node": "^22.15.30",
     "eslint": "^8.57.1",
     "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
   },
   "dependencies": {
     "@fastify/cookie": "^11.0.2",
