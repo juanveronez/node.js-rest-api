@@ -6,6 +6,13 @@ import { randomUUID } from 'crypto'
 import { checkSessionIdExists } from '../middlewares/checkSessionIdExists'
 
 export async function transactionsRoutes(app: FastifyInstance) {
+  // Add Hook create a scoped global hook
+  // For this scenario was created a preHandler (middleware) hook
+  app.addHook('preHandler', async ({ method, url }) => {
+    const dateIsoNow = new Date().toISOString()
+    console.log(`[${method}] (${url}) ${dateIsoNow}`)
+  })
+
   app.post('/', async ({ body, cookies }, reply) => {
     const createTransactionBodySchema = z.object({
       title: z.string(),
